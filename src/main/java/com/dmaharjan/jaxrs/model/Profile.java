@@ -6,28 +6,28 @@
 package com.dmaharjan.jaxrs.model;
 
 import java.util.Date;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author dmaharjan
  */
-@XmlRootElement
 public class Profile {
 
     private long id;
     private String profileName;
+    private String firstName;
     private String lastName;
     private Date created;
 
     public Profile() {
     }
 
-    public Profile(long id, String profileName, String lastName) {
+    public Profile(long id, String profileName, String firstName, String lastName) {
         this.id = id;
         this.profileName = profileName;
+        this.firstName = firstName;
         this.lastName = lastName;
-        this.created=new Date();
+        this.created = new Date();
     }
 
     public long getId() {
@@ -46,6 +46,14 @@ public class Profile {
         this.profileName = profileName;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getLastName() {
         return lastName;
     }
@@ -61,7 +69,5 @@ public class Profile {
     public void setCreated(Date created) {
         this.created = created;
     }
-    
-
 
 }
