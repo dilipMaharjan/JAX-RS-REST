@@ -6,6 +6,7 @@
 package com.dmaharjan.jaxrs.service;
 
 import com.dmaharjan.jaxrs.database.ResourceDatabase;
+import com.dmaharjan.jaxrs.model.Comment;
 import com.dmaharjan.jaxrs.model.Message;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -19,10 +20,13 @@ import java.util.Map;
 public class MessageService {
 
     private Map<Long, Message> messages = ResourceDatabase.getMessages();
+    private Map<Long, Comment> comments = ResourceDatabase.getComments();
 
     public MessageService() {
         messages.put(1L, new Message(1, "Hi there", "Dilip"));
         messages.put(2L, new Message(2, "Hi there as well", "Philip"));
+        comments.put(1L, new Comment(1, "comment for id 1", "random"));
+        comments.put(2L, new Comment(1, "comment for id 2", "random2"));
     }
 
     public List<Message> getAllMessages() {
